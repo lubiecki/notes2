@@ -2,24 +2,26 @@ import React, {Component} from 'react';
 import "./NotesList.sass";
 import {observer, inject} from "mobx-react";
 
-@inject('rootStore')
+@inject("NotesStore")
 @observer
 class NotesList extends Component {
     constructor(props) {
         super(props);
-        this.notesList = this.props.rootStore.notes;
+        this.handleClick = this.handleClick.bind(this);
     }
+    handleClick(index) {
+        this.props.NotesStore.setActive(index)
+    };
     render() {
+        const {filteredNotes} = this.props.NotesStore;
         return (
             <div className="notes_list">
-                <h1>Goals:</h1>
-                <table>
-                    <tbody>
-                    <tr>
-                        <th>{this.notesList}</th>
-                    </tr>
-                    </tbody>
-                </table>
+                <h1>Notes:</h1>
+                <ul>
+                {Object.keys(filteredNotes).map((index ) =>
+                    <li className={index.toString() === this.props.NotesStore.active.toString() ? 'active' : ''} onClick={() => this.handleClick(index)} key={index}>{filteredNotes[index].title}</li>
+                )}
+                </ul>
             </div>
         );
     }

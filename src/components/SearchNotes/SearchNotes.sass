@@ -1,0 +1,25 @@
+@import "../../assets/utils.sass"
+
+.search_box
+  width: 400px
+  background: $col3
+  padding: 20px 30px 10px 30px
+  border-radius: 20px 20px 0 0
+  margin: 10px 10px 0 10px
+  font-weight: 400
+  color: $white
+  input
+    background: $col3
+    border: 2px solid $col1
+    padding: 10px
+    border-radius: 10px
+    transition: ease 100ms
+    box-sizing: border-box
+    width: 100%
+    color: $white
+    &:active, &:focus
+      outline: none
+      border: 2px solid $col4
+      transition: ease 100ms
+    &::placeholder
+      color: $white

@@ -1,12 +1,20 @@
 @import "../../assets/utils.sass"
 
 .notes_list
+  width: 400px
   background: $col3
-  padding: 50px
-  border-radius: 20px
+  padding: 10px 30px 10px 30px
+  border-radius: 0
+  margin: 0 10px 0 10px
+  font-weight: 400
   h1
     font-weight: 800
     font-size: 120%
-  th, td
-    text-align: left
-    padding-right: 40px
+  ul
+    list-style: none
+    margin: 0 0 0 20px
+    padding: 0
+    li
+      cursor: pointer
+  .active
+    text-decoration: underline

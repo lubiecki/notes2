@@ -1,0 +1,32 @@
+@import "../../assets/utils.sass"
+
+.note_editor
+  width: 800px
+  background: $col2
+  padding: 30px 50px 30px 50px
+  border-radius: 20px
+  margin: 10px
+  input, textarea
+    background: none
+    color: inherit
+    border: none
+    font-size: inherit
+    font-weight: inherit
+    font-family: inherit
+    width: 100%
+    &:active, &:focus
+      outline: none
+  textarea
+    height: 200px
+    resize: none
+  button
+    background: $col1
+    border: none
+    font: inherit
+    padding: 10px
+    cursor: pointer
+    float: right
+    color: inherit
+    border-radius: 10px
+    &:focus, &:active
+      outline: none
